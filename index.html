@@ -1,0 +1,1223 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+    <title>💖 Valentine Neumorphe 💖</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-color: #fce4ec;
+            --text-main: #c2185b;
+            --text-light: #f06292;
+            --shadow-light: #ffffff;
+            --shadow-dark: #f8bbd0;
+            --primary: #f48fb1;
+            --accent: #e91e63;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            overflow: hidden;
+            position: relative;
+        }
+
+        /* Cœurs flottants en arrière-plan */
+        .heart {
+            position: absolute;
+            font-size: 1.5rem;
+            animation: float 12s infinite ease-in-out;
+            opacity: 0.4;
+            pointer-events: none;
+            color: var(--text-light);
+        }
+
+        @keyframes float {
+
+            0%,
+            100% {
+                transform: translateY(100vh) rotate(0deg);
+                opacity: 0;
+            }
+
+            10% {
+                opacity: 0.4;
+            }
+
+            90% {
+                opacity: 0.4;
+            }
+
+            100% {
+                transform: translateY(-100vh) rotate(360deg);
+                opacity: 0;
+            }
+        }
+
+        .container {
+            width: 100%;
+            max-width: 480px;
+            padding: 20px;
+            z-index: 10;
+        }
+
+        .valentine-card {
+            background-color: var(--bg-color);
+            padding: 60px 40px 40px 40px;
+            border-radius: 40px;
+            text-align: center;
+            box-shadow: 13px 13px 20px var(--shadow-dark),
+                -13px -13px 20px var(--shadow-light);
+        }
+
+        /* Logo avec l'ourson */
+        .logo {
+            width: 160px;
+            height: 160px;
+            border-radius: 50%;
+            margin: 0 auto 30px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 60px;
+            box-shadow: 8px 8px 16px var(--shadow-dark),
+                -8px -8px 16px var(--shadow-light);
+            animation: bounce 2s infinite ease-in-out;
+            overflow: hidden;
+        }
+
+        .logo img {
+            width: 85%;
+            height: 85%;
+            object-fit: cover;
+            border-radius: 50%;
+        }
+
+        @keyframes bounce {
+
+            0%,
+            100% {
+                transform: translateY(0) scale(1);
+            }
+
+            50% {
+                transform: translateY(-15px) scale(1.05);
+            }
+        }
+
+        .title {
+            font-size: 32px;
+            font-weight: 700;
+            color: var(--text-main);
+            letter-spacing: 0.5px;
+            margin-bottom: 10px;
+            line-height: 1.3;
+        }
+
+        .subtitle {
+            font-size: 16px;
+            color: var(--text-light);
+            margin-bottom: 50px;
+            font-weight: 400;
+        }
+
+        /* Input field for name */
+        .name-input-container {
+            margin-bottom: 30px;
+        }
+
+        .name-input {
+            width: 100%;
+            max-width: 300px;
+            height: 55px;
+            border-radius: 25px;
+            border: none;
+            outline: none;
+            padding: 0 25px;
+            font-size: 18px;
+            color: var(--text-main);
+            background-color: var(--bg-color);
+            box-shadow: inset 6px 6px 12px var(--shadow-dark),
+                inset -6px -6px 12px var(--shadow-light);
+            transition: all 0.3s ease;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        .name-input::placeholder {
+            color: var(--text-light);
+            opacity: 0.7;
+        }
+
+        .name-input:focus {
+            box-shadow: inset 8px 8px 16px var(--shadow-dark),
+                inset -8px -8px 16px var(--shadow-light);
+        }
+
+        .name-label {
+            display: block;
+            font-size: 16px;
+            color: var(--text-main);
+            margin-bottom: 15px;
+            font-weight: 600;
+        }
+
+        /* Conteneur des boutons */
+        .buttons-container {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            align-items: center;
+            position: relative;
+            min-height: 150px;
+            width: 100%;
+        }
+
+        /* Styles des boutons neumorphes */
+        button {
+            width: 100%;
+            max-width: 280px;
+            height: 65px;
+            border-radius: 30px;
+            font-size: 20px;
+            font-weight: 600;
+            border: none;
+            outline: none;
+            cursor: pointer;
+            box-shadow: 8px 8px 16px var(--shadow-dark),
+                -8px -8px 16px var(--shadow-light);
+            transition: all 0.3s ease;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+        }
+
+        #yesBtn {
+            color: #fff;
+            background: linear-gradient(135deg, #e91e63 0%, #f06292 100%);
+            transform: scale(1);
+        }
+
+        #yesBtn:hover {
+            background: linear-gradient(135deg, #c2185b 0%, #e91e63 100%);
+            transform: translateY(-2px);
+        }
+
+        #yesBtn:active {
+            box-shadow: inset 4px 4px 8px rgba(0, 0, 0, 0.2),
+                inset -4px -4px 8px rgba(255, 255, 255, 0.1);
+            transform: translateY(2px);
+        }
+
+        #yesBtn:disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+        }
+
+        #noBtn {
+            color: var(--text-main);
+            background-color: var(--bg-color);
+            position: relative;
+            z-index: 999;
+            transition: all 0.2s ease;
+            box-shadow: 8px 8px 16px var(--shadow-dark),
+                -8px -8px 16px var(--shadow-light);
+        }
+
+        #noBtn.moving {
+            position: fixed;
+        }
+
+        #noBtn:hover {
+            transform: translateY(-2px);
+        }
+
+        #noBtn:active {
+            box-shadow: inset 4px 4px 8px var(--shadow-dark),
+                inset -4px -4px 8px var(--shadow-light);
+            transform: translateY(2px);
+        }
+
+        /* Message de succès */
+        .success-message {
+            display: none;
+            animation: celebrate 0.6s ease-out;
+        }
+
+        @keyframes celebrate {
+            0% {
+                transform: scale(0);
+                opacity: 0;
+            }
+
+            50% {
+                transform: scale(1.1);
+            }
+
+            100% {
+                transform: scale(1);
+                opacity: 1;
+            }
+        }
+
+        .success-icon {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            margin: 0 auto 30px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 50px;
+            box-shadow: 8px 8px 16px var(--shadow-dark),
+                -8px -8px 16px var(--shadow-light);
+            animation: rotate 2s ease-in-out infinite;
+        }
+
+        @keyframes rotate {
+
+            0%,
+            100% {
+                transform: rotate(-10deg) scale(1);
+            }
+
+            50% {
+                transform: rotate(10deg) scale(1.1);
+            }
+        }
+
+        .success-message h2 {
+            font-size: 36px;
+            font-weight: 700;
+            color: var(--text-main);
+            margin-bottom: 15px;
+        }
+
+        .success-message p {
+            font-size: 18px;
+            color: var(--text-light);
+            line-height: 1.6;
+            font-weight: 400;
+        }
+
+        .love-declaration {
+            font-size: 16px;
+            color: var(--text-main);
+            line-height: 1.8;
+            margin-top: 20px;
+            padding: 20px;
+            border-radius: 20px;
+            background-color: var(--bg-color);
+            box-shadow: inset 4px 4px 8px var(--shadow-dark),
+                inset -4px -4px 8px var(--shadow-light);
+            max-height: 300px;
+            overflow-y: auto;
+        }
+
+        /* Décorations avec style neumorphe */
+        .decorative-hearts {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-top: 30px;
+        }
+
+        .heart-icon {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 20px;
+            color: var(--text-light);
+            box-shadow: 8px 8px 16px var(--shadow-dark),
+                -8px -8px 16px var(--shadow-light);
+            animation: pulse 2s ease-in-out infinite;
+        }
+
+        .heart-icon:nth-child(2) {
+            animation-delay: 0.3s;
+        }
+
+        .heart-icon:nth-child(3) {
+            animation-delay: 0.6s;
+        }
+
+        @keyframes pulse {
+
+            0%,
+            100% {
+                transform: scale(1);
+            }
+
+            50% {
+                transform: scale(1.15);
+            }
+        }
+
+        /* Confettis */
+        .confetti {
+            position: absolute;
+            width: 10px;
+            height: 10px;
+            background: var(--accent);
+            animation: confetti-fall 3s ease-out infinite;
+            opacity: 0;
+            border-radius: 50%;
+        }
+
+        @keyframes confetti-fall {
+            0% {
+                transform: translateY(-100vh) rotate(0deg);
+                opacity: 1;
+            }
+
+            100% {
+                transform: translateY(100vh) rotate(720deg);
+                opacity: 0;
+            }
+        }
+
+        /* Footer text */
+        .footer-text {
+            margin-top: 40px;
+            font-size: 13px;
+            color: var(--text-light);
+            font-weight: 400;
+        }
+
+        /* Responsive */
+
+        /* Très très petits écrans (moins de 320px) */
+        @media (max-width: 319px) {
+            .valentine-card {
+                padding: 20px 10px;
+                border-radius: 25px;
+            }
+
+            .title {
+                font-size: 18px;
+                line-height: 1.2;
+            }
+
+            .subtitle {
+                font-size: 12px;
+                margin-bottom: 25px;
+            }
+
+            .logo {
+                width: 100px;
+                height: 100px;
+                font-size: 35px;
+                margin-bottom: 15px;
+            }
+
+            button {
+                height: 45px;
+                font-size: 15px;
+                max-width: 100%;
+                padding: 0 12px;
+            }
+
+            .name-input {
+                max-width: 100%;
+                height: 45px;
+                font-size: 15px;
+                padding: 0 15px;
+            }
+
+            .name-label {
+                font-size: 13px;
+            }
+
+            .success-message h2 {
+                font-size: 22px;
+            }
+
+            .success-message p {
+                font-size: 14px;
+            }
+
+            .love-declaration {
+                font-size: 13px;
+                padding: 12px;
+                line-height: 1.6;
+            }
+
+            .heart-icon {
+                width: 35px;
+                height: 35px;
+                font-size: 16px;
+            }
+
+            .decorative-hearts {
+                gap: 10px;
+            }
+        }
+
+        /* Très petits mobiles (320px - 375px) */
+        @media (max-width: 375px) {
+            .valentine-card {
+                padding: 30px 15px;
+                border-radius: 30px;
+            }
+
+            .title {
+                font-size: 20px;
+            }
+
+            .subtitle {
+                font-size: 13px;
+                margin-bottom: 30px;
+            }
+
+            .logo {
+                width: 110px;
+                height: 110px;
+                font-size: 40px;
+                margin-bottom: 20px;
+            }
+
+            button {
+                height: 50px;
+                font-size: 16px;
+                max-width: 100%;
+                padding: 0 15px;
+            }
+
+            #noBtn {
+                height: 45px;
+                font-size: 14px;
+                max-width: 100%;
+            }
+
+            .heart-icon {
+                width: 40px;
+                height: 40px;
+                font-size: 18px;
+            }
+
+            .name-input {
+                max-width: 100%;
+                height: 50px;
+                font-size: 16px;
+                padding: 0 20px;
+            }
+
+            .name-label {
+                font-size: 14px;
+                margin-bottom: 10px;
+            }
+
+            .name-input-container {
+                margin-bottom: 25px;
+            }
+
+            .buttons-container {
+                gap: 15px;
+            }
+
+            .success-message h2 {
+                font-size: 24px;
+                margin-bottom: 10px;
+            }
+
+            .success-message p {
+                font-size: 15px;
+            }
+
+            .love-declaration {
+                font-size: 14px;
+                padding: 15px;
+                margin-top: 15px;
+            }
+
+            .footer-text {
+                margin-top: 25px;
+                font-size: 12px;
+            }
+        }
+
+        /* Petits mobiles (376px - 480px) */
+        @media (min-width: 376px) and (max-width: 480px) {
+            .valentine-card {
+                padding: 40px 25px;
+            }
+
+            .title {
+                font-size: 24px;
+            }
+
+            .subtitle {
+                margin-bottom: 35px;
+            }
+
+            .logo {
+                width: 130px;
+                height: 130px;
+                font-size: 50px;
+            }
+
+            button {
+                height: 55px;
+                font-size: 18px;
+                max-width: 100%;
+                padding: 0 20px;
+            }
+
+            #noBtn {
+                height: 50px;
+                font-size: 16px;
+                max-width: 100%;
+            }
+
+            .name-input {
+                max-width: 100%;
+                height: 52px;
+                font-size: 17px;
+            }
+
+            .name-input-container {
+                margin-bottom: 25px;
+            }
+
+            .success-message h2 {
+                font-size: 28px;
+            }
+
+            .success-message p {
+                font-size: 16px;
+            }
+
+            .love-declaration {
+                font-size: 15px;
+                padding: 18px;
+            }
+        }
+
+        /* Tablettes portrait (481px - 768px) */
+        @media (min-width: 481px) and (max-width: 768px) {
+            .container {
+                max-width: 500px;
+            }
+
+            .valentine-card {
+                padding: 50px 35px;
+            }
+
+            .title {
+                font-size: 28px;
+            }
+
+            .subtitle {
+                font-size: 17px;
+                margin-bottom: 40px;
+            }
+
+            .logo {
+                width: 170px;
+                height: 170px;
+                font-size: 65px;
+            }
+
+            button {
+                height: 60px;
+                font-size: 19px;
+                max-width: 320px;
+            }
+
+            #noBtn {
+                max-width: 320px;
+            }
+
+            .name-input {
+                max-width: 320px;
+                height: 55px;
+            }
+
+            .success-message h2 {
+                font-size: 32px;
+            }
+
+            .success-message p {
+                font-size: 17px;
+            }
+
+            .love-declaration {
+                font-size: 16px;
+                padding: 20px;
+            }
+        }
+
+        /* Tablettes paysage et petits desktops (769px - 1024px) */
+        @media (min-width: 769px) and (max-width: 1024px) {
+            .container {
+                max-width: 550px;
+            }
+
+            .valentine-card {
+                padding: 60px 45px;
+            }
+
+            .title {
+                font-size: 34px;
+            }
+
+            .subtitle {
+                font-size: 18px;
+            }
+
+            .logo {
+                width: 180px;
+                height: 180px;
+                font-size: 70px;
+            }
+
+            button {
+                height: 65px;
+                font-size: 20px;
+                max-width: 280px;
+            }
+
+            .success-message h2 {
+                font-size: 34px;
+            }
+
+            .success-message p {
+                font-size: 18px;
+            }
+
+            .love-declaration {
+                font-size: 16px;
+                padding: 22px;
+            }
+        }
+
+        /* Grands écrans (1025px et plus) */
+        @media (min-width: 1025px) {
+            .container {
+                max-width: 600px;
+            }
+
+            .valentine-card {
+                padding: 70px 50px;
+            }
+
+            .title {
+                font-size: 36px;
+            }
+
+            .subtitle {
+                font-size: 19px;
+            }
+
+            .logo {
+                width: 200px;
+                height: 200px;
+                font-size: 75px;
+            }
+
+            button {
+                height: 70px;
+                font-size: 22px;
+                max-width: 320px;
+            }
+
+            #noBtn {
+                max-width: 280px;
+            }
+
+            .heart-icon {
+                width: 60px;
+                height: 60px;
+                font-size: 24px;
+            }
+
+            .success-message h2 {
+                font-size: 38px;
+            }
+
+            .success-message p {
+                font-size: 19px;
+            }
+
+            .love-declaration {
+                font-size: 17px;
+                padding: 25px;
+            }
+        }
+
+        /* Mode paysage pour mobiles */
+        @media (max-height: 600px) and (orientation: landscape) {
+            .valentine-card {
+                padding: 15px 25px;
+            }
+
+            .logo {
+                width: 80px;
+                height: 80px;
+                font-size: 30px;
+                margin-bottom: 10px;
+            }
+
+            .title {
+                font-size: 18px;
+                margin-bottom: 5px;
+            }
+
+            .subtitle {
+                font-size: 12px;
+                margin-bottom: 15px;
+            }
+
+            button {
+                height: 40px;
+                font-size: 15px;
+            }
+
+            .decorative-hearts {
+                margin-top: 10px;
+            }
+
+            .heart-icon {
+                width: 35px;
+                height: 35px;
+                font-size: 16px;
+            }
+
+            .name-input {
+                height: 40px;
+                font-size: 15px;
+            }
+
+            .name-label {
+                font-size: 13px;
+                margin-bottom: 8px;
+            }
+
+            .name-input-container {
+                margin-bottom: 15px;
+            }
+
+            .buttons-container {
+                gap: 12px;
+                min-height: 100px;
+            }
+
+            .success-message h2 {
+                font-size: 20px;
+                margin-bottom: 8px;
+            }
+
+            .success-message p {
+                font-size: 14px;
+            }
+
+            .love-declaration {
+                font-size: 13px;
+                padding: 12px;
+                margin-top: 12px;
+                max-height: 150px;
+            }
+
+            .footer-text {
+                margin-top: 15px;
+                font-size: 11px;
+            }
+
+            .success-icon {
+                width: 70px;
+                height: 70px;
+                font-size: 35px;
+                margin-bottom: 15px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Cœurs flottants en arrière-plan -->
+    <div id="hearts-container"></div>
+
+    <!-- Carte principale -->
+    <div class="container">
+        <div class="valentine-card">
+            <div id="question-content">
+                <div class="logo">
+                    <img src="img/sddefault.jpg" alt="Valentine Bear" id="bearImage">
+                </div>
+                <div class="title">Ursula, le 14 février, accepterais-tu de devenir la Valentine d'Abraham et de
+                    partager ce moment unique avec lui ?</div>
+                <div class="subtitle">Une question importante pour toi...</div>
+
+                <!-- Champ de saisie du nom -->
+                <div class="name-input-container" id="nameInputContainer" style="display: block;">
+                    <label class="name-label">Entre ton nom pour confirmer 💕</label>
+                    <input type="text" class="name-input" id="nameInput" placeholder="Ton nom ici...">
+                </div>
+
+                <div class="buttons-container">
+                    <button id="yesBtn" disabled>Oui ! 💝</button>
+                    <button id="noBtn">Non 💔</button>
+                </div>
+                <div class="decorative-hearts">
+                    <div class="heart-icon">💕</div>
+                    <div class="heart-icon">💖</div>
+                    <div class="heart-icon">💗</div>
+                </div>
+            </div>
+
+            <div class="success-message" id="successMessage">
+                <div class="logo">
+                    <img src="img/valentine-s-day-digital-art-with-romantic-couple.jpg" alt="Valentine Bear"
+                        id="bearImage">
+                </div>
+                <h2 id="successTitle">Yayyy! Tu as dit oui 😍 💖</h2>
+                <p id="successText">Je savais que tu dirais oui!<br>Tu es la meilleure Valentine du monde! 🌹</p>
+                <div class="love-declaration" id="loveDeclaration">
+                    <!-- La déclaration personnalisée sera insérée ici -->
+                </div>
+                <div class="decorative-hearts">
+                    <div class="heart-icon">💝</div>
+                    <div class="heart-icon">❤️</div>
+                    <div class="heart-icon">💘</div>
+                </div>
+                <div class="footer-text">Merci d'être là pour moi je t'aime 💕</div>
+                <div>mon numéro : 07 77 54 39 45</div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // Fonction pour enregistrer la réponse
+            function saveResponse(name) {
+                const response = {
+                    name: name,
+                    accepted: true,
+                    timestamp: new Date().toISOString(),
+                    date: new Date().toLocaleString('fr-FR')
+                };
+
+                // Sauvegarder dans localStorage
+                let responses = JSON.parse(localStorage.getItem('valentineResponses') || '[]');
+                responses.push(response);
+                localStorage.setItem('valentineResponses', JSON.stringify(responses));
+
+                // Envoyer au serveur (optionnel - décommentez si vous avez un serveur)
+                // fetch('/api/save-response', {
+                //     method: 'POST',
+                //     headers: { 'Content-Type': 'application/json' },
+                //     body: JSON.stringify(response)
+                // });
+
+                console.log('Réponse enregistrée:', response);
+                console.log('Toutes les réponses:', responses);
+            }
+
+            // Gérer le champ de nom
+            const nameInput = document.getElementById('nameInput');
+            const nameInputContainer = document.getElementById('nameInputContainer');
+            const yesBtn = document.getElementById('yesBtn');
+
+            const noBtn = document.getElementById('noBtn');
+            let isMoving = false;
+
+            // Activer le bouton Oui quand un nom est entré
+            nameInput.addEventListener('input', function () {
+                if (this.value.trim().length > 0) {
+                    yesBtn.disabled = false;
+                    yesBtn.style.opacity = '1';
+                } else {
+                    yesBtn.disabled = true;
+                    yesBtn.style.opacity = '0.5';
+                }
+            });
+
+            // Créer des cœurs flottants en arrière-plan
+            function createFloatingHearts() {
+                const container = document.getElementById('hearts-container');
+                const hearts = ['💕', '💖', '💗', '💘', '💝', '❤️', '💓'];
+
+                setInterval(() => {
+                    const heart = document.createElement('div');
+                    heart.className = 'heart';
+                    heart.textContent = hearts[Math.floor(Math.random() * hearts.length)];
+                    heart.style.left = Math.random() * 100 + '%';
+                    heart.style.animationDuration = (Math.random() * 5 + 7) + 's';
+                    heart.style.animationDelay = Math.random() * 2 + 's';
+                    container.appendChild(heart);
+
+                    setTimeout(() => heart.remove(), 14000);
+                }, 1000);
+            }
+
+            // Faire bouger le bouton "Non"
+            let noBtnScale = 1;
+            let attempts = 0;
+
+            noBtn.addEventListener('mouseenter', moveButton);
+            noBtn.addEventListener('click', moveButton);
+
+            // Pour les appareils tactiles
+            let touchTimer;
+            noBtn.addEventListener('touchstart', function (e) {
+                e.preventDefault();
+                moveButton();
+            });
+
+            // Détection de proximité sur mobile
+            if ('ontouchstart' in window) {
+                let lastTouch = { x: 0, y: 0 };
+
+                document.addEventListener('touchmove', function (e) {
+                    if (document.getElementById('question-content').style.display === 'none') return;
+
+                    const touch = e.touches[0];
+                    lastTouch.x = touch.clientX;
+                    lastTouch.y = touch.clientY;
+
+                    const btnRect = noBtn.getBoundingClientRect();
+                    const btnCenterX = btnRect.left + btnRect.width / 2;
+                    const btnCenterY = btnRect.top + btnRect.height / 2;
+
+                    const distance = Math.sqrt(
+                        Math.pow(lastTouch.x - btnCenterX, 2) +
+                        Math.pow(lastTouch.y - btnCenterY, 2)
+                    );
+
+                    const screenWidth = window.innerWidth;
+                    let detectionZone = 80;
+
+                    if (screenWidth <= 375) {
+                        detectionZone = 60;
+                    } else if (screenWidth <= 480) {
+                        detectionZone = 70;
+                    } else if (screenWidth <= 768) {
+                        detectionZone = 90;
+                    } else {
+                        detectionZone = 100;
+                    }
+
+                    if (distance < detectionZone) {
+                        moveButton();
+                    }
+                });
+            }
+
+            function moveButton() {
+                // Activer le mode "moving" au premier clic
+                if (!isMoving) {
+                    isMoving = true;
+                    noBtn.classList.add('moving');
+                    // Positionner le bouton à sa position actuelle avant de le faire bouger
+                    const rect = noBtn.getBoundingClientRect();
+                    noBtn.style.left = rect.left + 'px';
+                    noBtn.style.top = rect.top + 'px';
+                }
+
+                attempts++;
+
+                // Augmenter le bouton "Oui" à chaque tentative
+                noBtnScale += 0.08;
+                yesBtn.style.transform = `scale(${noBtnScale})`;
+
+                // Messages amusants
+                const messages = [
+                    "Essaie encore 😏",
+                    "Tu es sûr(e)? 🤔",
+                    "Vraiment? 😢",
+                    "Allez, dis oui! 🥺",
+                    "S'il te plaît 💕",
+                    "Non non! 😝",
+                    "Attrape-moi! 🏃",
+                    "Impossible! 😎"
+                ];
+
+                if (attempts <= messages.length) {
+                    noBtn.textContent = messages[attempts - 1];
+                }
+
+                const btnWidth = noBtn.offsetWidth;
+                const btnHeight = noBtn.offsetHeight;
+
+                const screenWidth = window.innerWidth;
+                let margin = 20;
+
+                if (screenWidth <= 375) {
+                    margin = 10;
+                } else if (screenWidth <= 480) {
+                    margin = 15;
+                } else if (screenWidth <= 768) {
+                    margin = 20;
+                } else {
+                    margin = 30;
+                }
+
+                const maxX = window.innerWidth - btnWidth - margin;
+                const maxY = window.innerHeight - btnHeight - margin;
+
+                const newX = Math.max(margin, Math.random() * maxX);
+                const newY = Math.max(margin, Math.random() * maxY);
+
+                noBtn.style.left = newX + 'px';
+                noBtn.style.top = newY + 'px';
+                noBtn.style.transform = 'none';
+
+                const rotation = Math.random() * 40 - 20;
+                setTimeout(() => {
+                    noBtn.style.transform = `rotate(${rotation}deg)`;
+                }, 50);
+
+                if (navigator.vibrate) {
+                    navigator.vibrate(50);
+                }
+            }
+
+            // Générer une déclaration d'amour personnalisée
+            function generateLoveDeclaration(name) {
+                const declarations = [
+                    `${name}, depuis que tu es entrée dans ma vie, chaque jour est devenu une célébration. Tu illumines mes journées et réchauffe mon cœur d'une manière que je n'aurais jamais cru possible. Je t'aime plus que les mots ne pourront jamais l'exprimer. 💖`,
+
+                    `Ma chère ${name}, tu es la personne la plus extraordinaire que j'ai jamais rencontrée. Ton sourire fait disparaître tous mes soucis, et ta présence rend tout plus beau. Je te promets de chérir chaque moment passé avec toi. Tu es mon trésor le plus précieux. 🌹`,
+
+                    `${name}, tu es la raison pour laquelle je crois en l'amour véritable. Avec toi, j'ai trouvé ma maison, mon refuge, ma joie. Tu rends ma vie complète et je veux passer tous mes jours futurs à te rendre aussi heureuse que tu me rends heureux. Je t'aime infiniment. 💝`,
+
+                    `Mon amour ${name}, tu es comme une étoile dans mon ciel, brillante et unique. Chaque battement de mon cœur te dit combien tu comptes pour moi. Tu es ma Valentine aujourd'hui et pour toujours. Merci d'être toi, simplement merveilleuse. ❤️`,
+
+                    `${name}, les mots ne suffisent pas pour décrire ce que je ressens pour toi. Tu es ma meilleure amie, mon âme sœur, mon tout. Avec toi, chaque instant devient magique. Je te promets un amour sincère, fidèle et éternel. Tu es tout pour moi. 💘`
+                ];
+
+                return declarations[Math.floor(Math.random() * declarations.length)];
+            }
+
+            // Gérer le clic sur "Oui"
+            yesBtn.addEventListener('click', function () {
+                const userName = nameInput.value.trim();
+
+                if (!userName) {
+                    alert('Entre ton nom d\'abord ! 💕');
+                    nameInput.focus();
+                    return;
+                }
+
+                // Sauvegarder la réponse
+                saveResponse(userName);
+
+                // Effet de chargement
+                const originalText = yesBtn.textContent;
+                yesBtn.textContent = 'Traitement...';
+                yesBtn.style.opacity = '0.7';
+
+                setTimeout(() => {
+                    yesBtn.textContent = 'Parfait! 💖';
+                    yesBtn.style.background = 'linear-gradient(135deg, #4CAF50 0%, #8BC34A 100%)';
+
+                    setTimeout(() => {
+                        createConfetti();
+                        createHeartBurst();
+
+                        // Mettre à jour les messages avec le nom
+                        document.getElementById('successTitle').textContent = `Yayyy ${userName}! Tu as dit oui 😍 💖`;
+                        document.getElementById('successText').innerHTML = `Je t'aime ${userName} ! 💕<br>Tu es la meilleure Valentine du monde! 🌹`;
+                        document.getElementById('loveDeclaration').textContent = generateLoveDeclaration(userName);
+
+                        document.getElementById('question-content').style.display = 'none';
+                        document.getElementById('successMessage').style.display = 'block';
+                        yesBtn.style.opacity = '1';
+                    }, 800);
+                }, 1000);
+            });
+
+            // Créer des confettis
+            function createConfetti() {
+                const colors = ['#e91e63', '#f06292', '#f48fb1', '#fce4ec', '#ff69b4', '#ffd700'];
+
+                for (let i = 0; i < 120; i++) {
+                    setTimeout(() => {
+                        const confetti = document.createElement('div');
+                        confetti.className = 'confetti';
+                        confetti.style.left = Math.random() * 100 + '%';
+                        confetti.style.background = colors[Math.floor(Math.random() * colors.length)];
+                        confetti.style.animationDelay = Math.random() * 2 + 's';
+                        document.body.appendChild(confetti);
+
+                        setTimeout(() => confetti.remove(), 3000);
+                    }, i * 25);
+                }
+            }
+
+            // Créer une explosion de cœurs
+            function createHeartBurst() {
+                const hearts = ['💕', '💖', '💗', '💘', '💝', '❤️', '💓'];
+
+                for (let i = 0; i < 24; i++) {
+                    setTimeout(() => {
+                        const heart = document.createElement('div');
+                        heart.textContent = hearts[Math.floor(Math.random() * hearts.length)];
+                        heart.style.position = 'fixed';
+                        heart.style.left = '50%';
+                        heart.style.top = '50%';
+                        heart.style.fontSize = '2.5rem';
+                        heart.style.pointerEvents = 'none';
+                        heart.style.zIndex = '1000';
+
+                        const angle = (i / 24) * Math.PI * 2;
+                        const velocity = 250;
+                        const tx = Math.cos(angle) * velocity;
+                        const ty = Math.sin(angle) * velocity;
+
+                        heart.style.animation = 'none';
+                        document.body.appendChild(heart);
+
+                        heart.animate([
+                            { transform: 'translate(-50%, -50%) scale(1)', opacity: 1 },
+                            { transform: `translate(calc(-50% + ${tx}px), calc(-50% + ${ty}px)) scale(0.5)`, opacity: 0 }
+                        ], {
+                            duration: 1200,
+                            easing: 'ease-out'
+                        }).onfinish = () => heart.remove();
+                    }, i * 40);
+                }
+            }
+
+            // Ajouter des effets tactiles
+            const buttons = document.querySelectorAll('button, .heart-icon');
+            buttons.forEach(btn => {
+                btn.addEventListener('touchstart', function () {
+                    this.style.transform = 'scale(0.95)';
+                });
+                btn.addEventListener('touchend', function () {
+                    this.style.transform = 'scale(1)';
+                });
+            });
+
+            // Initialiser les cœurs flottants
+            createFloatingHearts();
+
+            // Fonction pour afficher toutes les réponses (pour vous, l'admin)
+            // Tapez viewResponses() dans la console du navigateur pour voir qui a répondu
+            window.viewResponses = function () {
+                const responses = JSON.parse(localStorage.getItem('valentineResponses') || '[]');
+                console.log('=== RÉPONSES VALENTINE ===');
+                console.table(responses);
+                return responses;
+            };
+
+            console.log('💡 Astuce: Tapez "viewResponses()" dans la console pour voir toutes les réponses');
+        });
+    </script>
+</body>
+
+</html>
