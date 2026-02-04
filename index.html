@@ -903,56 +903,12 @@
         document.addEventListener('DOMContentLoaded', () => {
             // Fonction pour enregistrer la réponse
             function saveResponse(name) {
-    const response = {
-        name: name,
-        accepted: true,
-        timestamp: new Date().toISOString(),
-        date: new Date().toLocaleString('fr-FR')
-    };
-
-    // Sauvegarder dans localStorage (backup local)
-    let responses = JSON.parse(localStorage.getItem('valentineResponses') || '[]');
-    responses.push(response);
-    localStorage.setItem('valentineResponses', JSON.stringify(responses));
-
-    // Envoyer au serveur Google Sheets
-    fetch('VOTRE_URL_DE_DEPLOIEMENT_ICI', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(response)
-    })
-    .then(response => response.json())
-    .then(data => {
-        console.log('✅ Réponse enregistrée sur Google Sheets:', data);
-    })
-    .catch(error => {
-        console.error('❌ Erreur lors de l\'enregistrement:', error);
-    });
-
-    console.log('Réponse enregistrée localement:', response);
-}
-```
-
-Remplacez `VOTRE_URL_DE_DEPLOIEMENT_ICI` par l'URL copiée à l'étape 4.
-
-## 📁 Structure des fichiers
-
-### Option 1 : Fichier unique
-```
-valentine/
-│
-├── index.html          # Fichier principal (tout-en-un)
-└── img/
-    ├── sddefault.jpg
-    └── valentine-s-day-digital-art-with-romantic-couple.jpg
-```
-
-### Option 2 : Google Apps Script
-```
-Google Apps Script Project
-│
-├── Code.gs             # Script serveur
-└── index.html          # Page web avec images
+                const response = {
+                    name: name,
+                    accepted: true,
+                    timestamp: new Date().toISOString(),
+                    date: new Date().toLocaleString('fr-FR')
+                };
 
                 // Sauvegarder dans localStorage
                 let responses = JSON.parse(localStorage.getItem('valentineResponses') || '[]');
